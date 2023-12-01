@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+				<lightning-tabset onactive={handleTabChange}>
+						<lightning-tab title="My Leaves" label="My Leaves">
+								<c-my-leaves></c-my-leaves>
+						</lightning-tab>
+						<lightning-tab title="My Leave Balance" label="My Leave Balance">
+								<c-my-leave-balance-lwc></c-my-leave-balance-lwc>
+						</lightning-tab>
+						<template if:true={userIsLeaveManager}>
+						<lightning-tab title="Leave Requests" label="Leave Requests">
+							<c-leave-requests></c-leave-requests>
+						</lightning-tab>
+						<lightning-tab title="Leave Summary" label="Leave Summary">
+							<c-leave-summary-lwc></c-leave-summary-lwc>
+						</lightning-tab>
+						</template>
+				</lightning-tabset>
+		</lightning-card>
+</template>
